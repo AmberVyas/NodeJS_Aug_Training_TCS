@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "chalk": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "dev-server": "nodemon server.mjs",
+    "start": "node server.js"
+  },
+  "name": "tcs_training_project",
+  "version": "0.0.1",
+  "description": "This is demo project for TCS Training.",
+  "main": "server.mjs",
+  "keywords": [
+    "Node"
+  ],
+  "author": "Amber",
+  "license": "MIT"
+}
