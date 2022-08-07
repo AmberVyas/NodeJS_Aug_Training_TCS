@@ -15,6 +15,8 @@ http.createServer((req,res)=>{
     reqPath,parsed.query,os.platform(),os.arch(), getdatetime());
 
     console.log(respond);
+console.log(new Date());
+
     res.end(respnd);
 }).listen(PORT,()=>{
     console.log(chalk.bgGreen(chalk.blue("server is listening on ")+chalk.bold(PORT)));
