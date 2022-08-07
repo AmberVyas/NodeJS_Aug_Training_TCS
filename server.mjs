@@ -14,6 +14,7 @@ http.createServer((req,res)=>{
     const respnd = util.format("you are looking for %s query is %s. Application is running on %s OS arch is %s. Time is %s", 
     reqPath,parsed.query,os.platform(),os.arch(), getdatetime());
 
+    console.log(respond);
     res.end(respnd);
 }).listen(PORT,()=>{
     console.log(chalk.bgGreen(chalk.blue("server is listening on ")+chalk.bold(PORT)));
