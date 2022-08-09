@@ -1,23 +1,15 @@
-import http from "http";
-import url from "url";
-import util from "util";
-import os from "os";
-import chalk from "chalk"
-import {getdatetime, getdate, applicationName} from "./time/index.mjs";
+import express from "express";
 
-const PORT = 4000;
+const app  = express();
+const port = 3000;
+app.get("/",(req,res)=>{
+    res.send("Hello from root");
+})
 
-http.createServer((req,res)=>{
+app.get("/products",(req,res)=>{
+    res.send("Hello from products");
+})
 
-    const reqPath = req.url;
-    const parsed = url.parse(reqPath);
-    const respnd = util.format("you are looking for %s query is %s. Application is running on %s OS arch is %s. Time is %s", 
-    reqPath,parsed.query,os.platform(),os.arch(), getdatetime());
-
-    console.log(respond);
-console.log(new Date());
-
-    res.end(respnd);
-}).listen(PORT,()=>{
-    console.log(chalk.bgGreen(chalk.blue("server is listening on ")+chalk.bold(PORT)));
-});
+app.listen(port,()=>{
+    console.log(`Server is listening on ${port}`);
+})
