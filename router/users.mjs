@@ -6,7 +6,8 @@ const router = express.Router();
 router.get("/",async (req,res)=>{
     try {
         const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-        res.json(response.data)
+        //res.json(response.data)
+        res.render("users",{users :response.data });
 
     } catch (error) {
         res.status(500).send("internal server error");

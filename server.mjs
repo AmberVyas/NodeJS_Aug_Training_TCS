@@ -6,6 +6,7 @@ import productsRouter from "./router/products.mjs";
 const app  = express();
 
 app.use(express.json());
+app.set("view engine","ejs");
 const port = process.env.port || 3000;
 
 app.use("/",homePageRouter);
